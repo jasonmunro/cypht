@@ -48,6 +48,12 @@ add_output('search', 'search_name_fld', true, 'saved_searches', 'search_form_con
 add_output('search', 'delete_search_icon', true, 'saved_searches', 'search_form_end', 'after');
 add_output('search', 'update_search_icon', true, 'saved_searches', 'search_form_end', 'after');
 
+add_handler('advanced_search', 'save_searches_data', true, 'saved_searches', 'load_user_data', 'after');
+add_output('advanced_search', 'save_search_icon', true, 'saved_searches', 'advanced_search_results_table_end', 'after');
+add_output('advanced_search', 'update_search_label_icon', true, 'saved_searches', 'advanced_search_results_table_end', 'after');
+add_output('advanced_search', 'search_name_fld', true, 'saved_searches', 'advanced_search_form_content', 'after');
+add_output('advanced_search', 'delete_search_icon', true, 'saved_searches', 'advanced_search_form_end', 'after');
+add_output('advanced_search', 'update_search_icon', true, 'saved_searches', 'advanced_search_form_end', 'after');
 
 
 return array(
