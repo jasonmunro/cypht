@@ -113,6 +113,11 @@ var Hm_Ajax = {
         }
         var hm_loading_pos = $('.loading_icon').width()/40;
         $('.loading_icon').show();
+        $('.main_content_overlay').show();
+        $('.main_content_overlay').on('click', function() {
+            Hm_Ajax.stop_loading_icon();
+        });
+
         function move_background_image() {
             hm_loading_pos = hm_loading_pos + 50;
             $('.loading_icon').css('background-position', hm_loading_pos+'px 0');
@@ -124,6 +129,7 @@ var Hm_Ajax = {
     stop_loading_icon : function(loading_id) {
         clearTimeout(loading_id);
         $('.loading_icon').hide();
+        $('.main_content_overlay').hide();
         Hm_Ajax.icon_loading_id = false;
     },
 

@@ -1462,7 +1462,7 @@ class Hm_Output_content_section_start extends Hm_Output_Module {
      * Opens a main tag for the primary content section
      */
     protected function output() {
-        return '<main class="content_cell"><div class="offline">'.$this->trans('Offline').'</div>';
+        return '<main class="content_cell"><div class="main_content_overlay"></div><div class="offline">'.$this->trans('Offline').'</div>';
     }
 }
 

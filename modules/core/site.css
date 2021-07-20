@@ -267,3 +267,54 @@ div.unseen, .unseen .subject { font-weight: 700; }
 @media print {
     .sys_messages, .next, .prev, .folder_list, .msg_parts, .header_links, .content_title, .add_contact_row, .unsaved_icon, .add_vcal { display: none !important; }
 }
+
+
+/*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */@-webkit-keyframes spinAround {
+ from {
+  transform:rotate(0)
+ }
+ to {
+  transform:rotate(359deg)
+ }
+}
+@keyframes spinAround {
+ from {
+  transform:rotate(0)
+ }
+ to {
+  transform:rotate(359deg)
+ }
+}
+
+
+.main_content_overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	z-index: 999999;
+}
+
+.main_content_overlay::after {
+	-webkit-animation: spinAround .5s infinite linear;
+	animation: spinAround .5s infinite linear;
+	border: 2px solid #dbdbdb;
+	border-top-color: rgb(219, 219, 219);
+	border-right-color: rgb(219, 219, 219);
+	border-bottom-color: rgb(219, 219, 219);
+	border-left-color: rgb(219, 219, 219);
+	border-radius: 290486px;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	content: "";
+	display: block;
+	height: 2em;
+	position: relative;
+	width: 2em;
+	position: absolute;
+	left: calc(50vw - (1em / 2));
+	top: calc(50vh - (1em / 2));
+	position: absolute !important;
+}
+
