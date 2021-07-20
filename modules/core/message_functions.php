@@ -114,11 +114,16 @@ function reply_to_address($headers, $type) {
     if ($type == 'forward') {
         return $msg_to;
     }
-    foreach (array('reply-to', 'from', 'sender', 'return-path') as $fld) {
-        if (array_key_exists($fld, $headers)) { 
-            list($parsed, $msg_to) = format_reply_address($headers[$fld], $parsed);
-            if ($msg_to) {
-                break;
+    if (count($headers["return-path"]) == 1) {
+        $msg_to = $headers["to"];
+    }
+    else {
+        foreach (array('reply-to', 'from', 'sender', 'return-path') as $fld) {
+            if (array_key_exists($fld, $headers)) { 
+                list($parsed, $msg_to) = format_reply_address($headers[$fld], $parsed);
+                if ($msg_to) {
+                    break;
+                }
             }
         }
     }
